@@ -1,29 +1,30 @@
 import fs from 'fs';
 
-const input = fs.readFileSync(process.argv[2], 'utf-8')
+const input = fs
+  .readFileSync(process.argv[2], 'utf-8')
   .trim()
   .split('\n')
-  .map(line => {
+  .map((line) => {
     const [command, value] = line.split(' ');
     return [command, parseInt(value)];
   });
 
 // part 1
-const pos1 = {position: 0, depth: 0};
+const pos1 = { position: 0, depth: 0 };
 for (const [command, value] of input) {
   switch (command) {
-  case 'forward':
-    pos1.position += value;
-    break;
-  case 'up':
-    pos1.depth -= value;
-    break;
-  case 'down':
-    pos1.depth += value;
-    break;
-  default: 
-    console.log('bad input', command, value);
-    process.exit(1);
+    case 'forward':
+      pos1.position += value;
+      break;
+    case 'up':
+      pos1.depth -= value;
+      break;
+    case 'down':
+      pos1.depth += value;
+      break;
+    default:
+      console.log('bad input', command, value);
+      process.exit(1);
   }
 }
 
@@ -34,22 +35,22 @@ Results (${input.length} total commands):
   Multiplied: ${pos1.position * pos1.depth}
 `);
 
-const pos2 = {position: 0, depth: 0, aim: 0};
+const pos2 = { position: 0, depth: 0, aim: 0 };
 for (const [command, value] of input) {
   switch (command) {
-  case 'forward':
-    pos2.position += value;
-    pos2.depth += (pos2.aim * value);
-    break;
-  case 'up':
-    pos2.aim -= value;
-    break;
-  case 'down':
-    pos2.aim += value;
-    break;
-  default: 
-    console.log('bad input', command, value);
-    process.exit(1);
+    case 'forward':
+      pos2.position += value;
+      pos2.depth += pos2.aim * value;
+      break;
+    case 'up':
+      pos2.aim -= value;
+      break;
+    case 'down':
+      pos2.aim += value;
+      break;
+    default:
+      console.log('bad input', command, value);
+      process.exit(1);
   }
 }
 

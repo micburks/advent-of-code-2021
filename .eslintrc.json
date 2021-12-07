@@ -2,29 +2,18 @@
   "root": true,
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": { "project": ["./tsconfig.json"] },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["prettier"],
   "rules": {
-    "array-bracket-spacing": ["error", "never"],
-    "block-spacing": "error",
-    "curly": ["error", "all"],
-    "indent": ["error", 2],
-    "func-call-spacing": ["error", "never"],
-    "jsx-quotes": ["error", "prefer-double"],
-    "no-duplicate-imports": "error",
-    "no-extra-semi": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
-    "object-curly-spacing": ["error", "never"],
-    "padded-blocks": ["error", "never"],
-    "space-in-parens": ["error", "never"],
-    "semi": ["error", "always"],
-    "sort-imports": "error",
-    "quotes": ["error", "single"]
+    "prettier/prettier": [
+      "error", {
+        "singleQuote": true
+      }
+    ],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
   },
   "env": {
     "node": true

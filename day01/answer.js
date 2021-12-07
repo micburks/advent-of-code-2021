@@ -8,14 +8,14 @@ function findDepthChanges(input) {
   let decreased = 0;
   let stayed = 0;
   for (let i = 1; i < input.length; i++) {
-    if (input[i] < input[i-1]) {
-      debug && console.log(`${input[i-1]} -> ${input[i]} (decreased)`);
+    if (input[i] < input[i - 1]) {
+      debug && console.log(`${input[i - 1]} -> ${input[i]} (decreased)`);
       decreased++;
-    } else if (input[i] > input[i-1]) {
-      debug && console.log(`${input[i-1]} -> ${input[i]} (increased)`);
+    } else if (input[i] > input[i - 1]) {
+      debug && console.log(`${input[i - 1]} -> ${input[i]} (increased)`);
       increased++;
     } else {
-      debug && console.log(`${input[i-1]} -> ${input[i]} (stayed)`);
+      debug && console.log(`${input[i - 1]} -> ${input[i]} (stayed)`);
       stayed++;
     }
   }
@@ -23,8 +23,7 @@ function findDepthChanges(input) {
 Individual Results (${input.length} total):
   Increased: ${increased}
   Decreased: ${decreased}
-  Stayed: ${stayed}`
-  );
+  Stayed: ${stayed}`);
 }
 
 function findGroupedDepthChanges(input) {
@@ -32,8 +31,8 @@ function findGroupedDepthChanges(input) {
   let decreased = 0;
   let stayed = 0;
   for (let i = 3; i < input.length; i++) {
-    const groupA = [input[i-1], input[i-2], input[i-3]];
-    const groupB = [input[i], input[i-1], input[i-2]];
+    const groupA = [input[i - 1], input[i - 2], input[i - 3]];
+    const groupB = [input[i], input[i - 1], input[i - 2]];
     const groupASum = groupA.reduce(sum, 0);
     const groupBSum = groupB.reduce(sum, 0);
     if (groupBSum < groupASum) {
@@ -51,8 +50,7 @@ function findGroupedDepthChanges(input) {
 Group Results (${input.length} total):
   Increased: ${increased}
   Decreased: ${decreased}
-  Stayed: ${stayed}`
-  );
+  Stayed: ${stayed}`);
 }
 
 function sum(total, current) {
@@ -63,7 +61,7 @@ function sum(total, current) {
   const input = (await fs.readFile(inputPath, 'utf-8'))
     .trim()
     .split('\n')
-    .map(l => parseInt(l));
+    .map((l) => parseInt(l));
 
   // part 1
   findDepthChanges(input);
