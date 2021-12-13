@@ -52,7 +52,7 @@ for (let i = 0; i < input[0].length; i++) {
     oxy = oxy.filter((val) => val[i] === mostCommon[i]);
     if (i !== input[0].length - 1) {
       const oxyAvg = oxy.map((val) => val[i + 1]).reduce(sum, 0) / oxy.length;
-      debug && console.log({ oxyAvg });
+      debug && console.log({oxyAvg});
       if (oxyAvg >= 0.5) {
         mostCommon.push(1);
       } else {
@@ -65,7 +65,7 @@ for (let i = 0; i < input[0].length; i++) {
     car = car.filter((val) => val[i] === leastCommon[i]);
     if (i !== input[0].length - 1) {
       const carAvg = car.map((val) => val[i + 1]).reduce(sum, 0) / car.length;
-      debug && console.log({ carAvg });
+      debug && console.log({carAvg});
       if (carAvg >= 0.5) {
         leastCommon.push(0);
       } else {
@@ -76,8 +76,8 @@ for (let i = 0; i < input[0].length; i++) {
 }
 
 debug && console.log('done');
-debug && console.log({ oxy });
-debug && console.log({ car });
+debug && console.log({oxy});
+debug && console.log({car});
 oxyRating = parseInt(oxy[0].join(''), 2);
 carRating = parseInt(car[0].join(''), 2);
 

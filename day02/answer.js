@@ -10,7 +10,7 @@ const input = fs
   });
 
 // part 1
-const pos1 = { position: 0, depth: 0 };
+const pos1 = {position: 0, depth: 0};
 for (const [command, value] of input) {
   switch (command) {
     case 'forward':
@@ -35,7 +35,7 @@ Results (${input.length} total commands):
   Multiplied: ${pos1.position * pos1.depth}
 `);
 
-const pos2 = { position: 0, depth: 0, aim: 0 };
+const pos2 = {position: 0, depth: 0, aim: 0};
 for (const [command, value] of input) {
   switch (command) {
     case 'forward':
