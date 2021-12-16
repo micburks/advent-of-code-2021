@@ -111,10 +111,5 @@ console.log(`
 Results (${map.length} lines):
   Steps: ${steps}
   Flashes: ${totalFlashes}
-`);
-
-printMap(map);
-console.log(`
-Results (${map.length} lines):
   First synchronous flashing step: ${stepCounter}
 `);
