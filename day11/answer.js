@@ -100,6 +100,7 @@ do {
 
   if (stepCounter === steps) {
     totalFlashes = flashCounter;
+    printMap(map);
   }
 
   stepCounter += 1;
